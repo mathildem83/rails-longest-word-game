@@ -1,0 +1,14 @@
+<h2 class="text-center">Result</h2>
+<div class=" d-flex flex-column align-items-center">
+  <% if @included %>
+    <% if @english_word%>
+      <p class="bg-success bg-opacity-25 p-2">Congratulations! <strong><%= @word %></strong> is a valid English word!</p>
+    <%else%>
+      <p class="bg-warning bg-opacity-25 p-2">Sorry but <strong><%= @word %></strong> does not seem to be a valid English word...</p>
+    <%end%>
+  <%else%>
+    <p class="bg-secondary bg-opacity-25 p-2">Sorry but <strong><%= @word %></strong> can't be built out of <%= @letters %><p>
+  <%end%>
+</div>
+
+<p class="text-center"><%= link_to "Play again!", new_path %></p>
